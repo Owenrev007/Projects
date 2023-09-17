@@ -1,0 +1,98 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp31
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<cat> myCats = new List<cat>()
+            {
+                new cat(){ Name = "jim" , Colour = "black" , catType = "Ragdoll" , birthYear = 2012} , 
+                new cat(){ Name = "jim" , Colour = "white" , catType = "maine coon" , birthYear = 2010} , 
+                new cat(){ Name = "timy" , Colour = "black" , catType = "Ragdoll" , birthYear = 2001}
+
+
+            };
+            // LINQ  querys 
+            /*var jims  = from cat  in myCats
+                        where cat.Name == "jim"
+                             select cat;
+            */
+
+
+
+            /*var orderedCats = from cat in myCats 
+                              orderby cat.birthYear descending
+                              select cat;
+            */
+
+
+            // LINQ METHODS 
+
+
+            Console.WriteLine(myCats.GetType());
+            Console.ReadLine(); 
+
+            /*
+            Console.WriteLine(myCats.Sum(p=> p.birthYear));
+            Console.ReadLine();
+            */ 
+
+
+
+
+            /*
+            Console.WriteLine(myCats.Exists(p => p.Colour == "black"));
+
+            Console.ReadLine();
+            */ 
+
+
+
+            /*
+            Console.WriteLine(myCats.TrueForAll(p => p.birthYear > 2005));
+            Console.ReadLine();
+            */
+            
+            // var jims = myCats.Where(p => p.Name == "jim" && p.Colour == "white");
+
+
+            // var orderedCats = myCats.OrderByDescending(p => p.birthYear);
+            /*
+            var FirstJim = myCats.First(p => p.Name == "jim");
+            Console.WriteLine(FirstJim.Name);
+            Console.ReadLine();
+            */
+          /*foreach (var cat in orderedCats)
+            {
+
+                Console.WriteLine(cat.birthYear + " " + cat.Name + " " + cat.catType);
+
+
+            }
+            Console.ReadLine();
+          */
+
+            /* foreach ( var cat in jims)
+             {
+                 Console.WriteLine( cat.Name +" " + cat.catType + " " + cat.Colour);
+             }
+             Console.ReadLine();
+            */
+        }
+    }
+    class cat
+    {
+        public string Name { get; set; }
+        public string catType{ get; set; }
+        public string Colour { get; set; }
+        public int birthYear {  get; set; } 
+
+    }
+}
